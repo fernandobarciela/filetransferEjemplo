@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<title>ejemplo filetransfer</title>
+	<meta name="viewport" content="width=device-width  , initial-scale=1"> <!-- Comentario:"viewport": "ventana de navegador", "medi lo que mide tu vidrio", en el celular mide lo mismo que la pantalla o más cuando hago zoom. no funciona en la compu// este metatag tiene que estar si o si en cualquier sitio que quiero que sea responsive-->
+    <!-- width=device-width: se acomoda al tamañano del dspositivo donde se reproduce
+    initial-scale=1 = resetea el zoom
+     -->
+     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<script src="cordova.js"></script> <!--esto lo pone el phonegap, lo pongo porq voy a usar plugins de phonegap
+        -->
+<script src="funciones.js"> </script> 
+
+<style>
+#mi_imagen{
+	max-width:100%;
+	height:auto;
+}
+</style>        
+</head>
+
+<body>
+
+	<div data-role="page" id="inicio"><!-- div d ela primera pantalla. el datarole le dice q es la primer pagina-->
+   		<div data-role="header">header</div>
+			
+            <button id="boton" class="ui-btn">sacar foto </button>
+      <script>
+	  document.addEventListener("deviceready", onDeviceReady, false);
+	  
+	  function onDeviceReady(){
+	  $("#boton").click(function(){
+		  sacafoto();
+		});
+	  }
+	  </script>
+      <p id="porcentaje"></p>      
+       <img id="mi_imagen"/>            
+            
+    	<div data-role="footer" data-position= "fixed">footer</div>
+
+   </div>
+   
+    
+   
+    
+</body>
+</html>
